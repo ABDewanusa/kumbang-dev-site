@@ -1,11 +1,40 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a setup to get React working in Vite with TypeScript, Tailwind CSS, Supabase and React Router. It includes a basic structure for building a blog application.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+*   [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript.
+*   [Vite](https://vitejs.dev/) - A fast build tool and development server for modern web projects.
+*   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
+*   [Supabase](https://supabase.com/) - An open-source Firebase alternative for backend services (database, storage, authentication).
+*   [React Router](https://reactrouter.com/) - A standard library for routing in React applications.
+
+## Project Structure
+src/ 
+├── components/ # Reusable UI components 
+├── pages/ # Page components 
+├── services/ # API and service functions 
+├── types/ # TypeScript type definitions 
+├── utils/ # Utility functions and constants 
+└── lib/ # Utility functions and constants
+
+
+## Deployment
+
+This project is deployed to [Firebase Hosting](https://firebase.google.com/docs/hosting) using [GitHub Actions](https://github.com/features/actions).
+
+To deploy your own copy of this project:
+
+1.  Create a Firebase project.
+2.  Enable Firebase Hosting.
+3.  Install the Firebase CLI: `npm install -g firebase-tools`
+4.  Log in to Firebase: `firebase login`
+5.  Initialize Firebase Hosting: `firebase init hosting`
+6.  Create a Firebase service account and add its JSON key as a secret in your GitHub repository settings (`FIREBASE_SERVICE_ACCOUNT`).
+7.  Configure the `projectId` parameter in `.github/workflows/deploy.yml` to your Firebase project ID.
+8.  Commit and push your changes to your GitHub repository.
 
 ## Expanding the ESLint configuration
 
@@ -29,26 +58,3 @@ export default tseslint.config({
     },
   },
 })
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
