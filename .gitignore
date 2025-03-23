@@ -22,3 +22,39 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Node.js
+node_modules
+# If you use .env for environment variables, make sure to add .env to .gitignore
+.env
+# testing
+/coverage
+
+# Type checking
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Editors (VS Code etc.)
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Project-specific files
+dist
+dist-ssr
+*.local
+
+#Supabase
+.supabase
+
+#Prisma
+.prisma/*
+!.prisma/client
+prisma/migrations/*
