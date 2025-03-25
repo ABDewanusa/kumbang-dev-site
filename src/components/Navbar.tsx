@@ -1,6 +1,6 @@
 // src/components/Navbar.tsx
 import { Link } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function Navbar({ homeRef, projectsRef, contactRef }: { homeRef: any, projectsRef: any, contactRef: any }) {
   const [activeSection, setActiveSection] = useState(window.location.hash);

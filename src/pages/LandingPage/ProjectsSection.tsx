@@ -1,7 +1,7 @@
 // src/pages/LandingPage/ProjectsSection.tsx
 import { forwardRef } from 'react';
 
-const ProjectsSection = forwardRef<HTMLDivElement>((props, ref) => {
+const ProjectsSection = forwardRef<HTMLDivElement>(({ }, ref) => {
   return (
     <div className="bg-gray-100 min-h-screen py-12" id="projects" ref={ref}> {/* Background and minimum height */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
