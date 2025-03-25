@@ -1,6 +1,6 @@
-# React + TypeScript + Vite Blog
+# React + TypeScript + Vite Landing Page
 
-This template provides a setup to get React working in Vite with TypeScript, Tailwind CSS, Supabase and React Router. It includes a basic structure for building a blog application.
+This project provides a setup for a single-page landing page built with React, TypeScript, and Vite, styled with Tailwind CSS, and using React Router for navigation. It includes a basic structure for a portfolio-style website with sections for Home, Projects, and Contact.
 
 ## Technologies Used
 
@@ -8,53 +8,41 @@ This template provides a setup to get React working in Vite with TypeScript, Tai
 *   [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript.
 *   [Vite](https://vitejs.dev/) - A fast build tool and development server for modern web projects.
 *   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
-*   [Supabase](https://supabase.com/) - An open-source Firebase alternative for backend services (database, storage, authentication).
-*   [React Router](https://reactrouter.com/) - A standard library for routing in React applications.
+*   [React Router](https://reactrouter.com/) - A standard library for routing in React applications, primarily used for the NotFound page and potential future routes.
 
 ## Project Structure
 src/ 
-├── components/ # Reusable UI components 
+├─ components/ # Reusable UI components 
+│   └─ Navbar.tsx # Navigation bar component 
 ├── pages/ # Page components 
-├── services/ # API and service functions 
-├── types/ # TypeScript type definitions 
-├── utils/ # Utility functions and constants 
-└── lib/ # Utility functions and constants
+│   ├── LandingPage/ # Landing page components 
+│   │   ├── ContactSection.tsx # Contact section 
+│   │   ├── Footer.tsx # Footer component 
+│   │   ├── HomeSection.tsx # Home section 
+│   │   ├── ProjectsSection.tsx # Projects section 
+│   │   └── index.tsx # Landing page root component 
+│   └── NotFound.tsx # 404 Not Found page 
+├── App.tsx # Main application component 
+├── App.css # Global CSS styles (using Tailwind) 
+├── index.css # Tailwind base styles 
+└── main.tsx # Entry point for React
 
 
-## Deployment
+## Key Components
 
-This project is deployed to [Firebase Hosting](https://firebase.google.com/docs/hosting) using [GitHub Actions](https://github.com/features/actions).
+*   **`Navbar.tsx`:** The navigation bar component at the top of the page. It handles smooth scrolling to different sections of the landing page. It utilizes React Refs for smooth scrolling
 
-To deploy your own copy of this project:
+*   **`src/pages/LandingPage/index.tsx`:** This is the main component for your Landing page.
+It uses Refs to manage the sections of this website and has a home, project, and contact section to describe various components.
 
-1.  Create a Firebase project.
-2.  Enable Firebase Hosting.
-3.  Install the Firebase CLI: `npm install -g firebase-tools`
-4.  Log in to Firebase: `firebase login`
-5.  Initialize Firebase Hosting: `firebase init hosting`
-6.  Create a Firebase service account and add its JSON key as a secret in your GitHub repository settings (`FIREBASE_SERVICE_ACCOUNT`).
-7.  Configure the `projectId` parameter in `.github/workflows/deploy.yml` to your Firebase project ID.
-8.  Commit and push your changes to your GitHub repository.
+## To Do: Connecting backend to render it smoothly
 
-## Expanding the ESLint configuration
+## Smooth Scrolling with React Refs
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project implements smooth scrolling between sections on the landing page. Here's how it works:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1.  **React Refs:** React's `useRef` hook is used to create references to the Home, Projects, and Contact sections.
+
+2.  **Ref Handling:** The Reacts' functions will handle all of the sections, in a more appropriate code and style for reacts
+
+To the developer who expands on this code, this should provide guidance to the code that is done. Now this is done I will no longer continue with this code, as the task is now up to the coder. The framework has been built.
