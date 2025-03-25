@@ -1,5 +1,7 @@
 // src/pages/LandingPage/HomeSection.tsx
 import React, { forwardRef } from 'react';
+import profileImage from "../../../src/assets/1.svg"
+
 
 interface HomeSectionProps {
     projectsRef: React.RefObject<HTMLDivElement | null>;
@@ -19,7 +21,8 @@ const HomeSection = forwardRef<HTMLDivElement, HomeSectionProps>((props, ref) =>
                 <div className="flex justify-center mt-15">
                     <img
                         className="h-50 w-50 rounded-full object-cover"
-                        src="../../../../src/assets/1.svg" // Replace with your profile photo URL
+                        src={profileImage} // Replace with your profile photo URL
+                        // src="./src/assets/1.svg" // Replace with your profile photo URL
                         alt="Profile Photo"
                     />
                 </div>

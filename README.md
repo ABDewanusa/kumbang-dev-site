@@ -12,8 +12,10 @@ This project provides a setup for a single-page landing page built with React, T
 
 ## Project Structure
 src/ 
+├── assets/
+│   └── 1.svg
 ├─ components/ # Reusable UI components 
-│   └─ Navbar.tsx # Navigation bar component 
+│   └── Navbar.tsx # Navigation bar component 
 ├── pages/ # Page components 
 │   ├── LandingPage/ # Landing page components 
 │   │   ├── ContactSection.tsx # Contact section 
